@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-auto">
+    <br>
+    <h2 class="d-flex justify-content-center">Welcome to the dashboard!</h2>
+    <br>
+    <p>Click to create a new post!</p>
+    <a href="/newpost" class="btn btn-info d-flex mt-10 justify-content-center">Create New Post</a>
+  </div>
+  <br>
+  <h4>Previous Posts:</h4>
+  {{#each posts}}
+    <div class="card post p-3" style="width: 18rem">
+      <h5><a href="/post/{{id}}" class="text-decoration-none text-reset">{{title}}</a></h5>
+      <p class="text-secondary">By: {{user.email}}</p>
+      <a href="/editpost/{{id}}" class="btn btn-primary">Edit Post</a>
+      <button class="btn btn-danger delete-post" data-post-id="{{id}}">Delete Post</button>
+    </div>
+  {{/each}}
+</div>
+
+
+<script src="./js/profile.js"></script>

@@ -1,0 +1,22 @@
+<div class="container">
+  <br>
+  <h2 class="d-flex justify-content-center">Edit Post</h2>
+  <form class="formUpdate">
+    <div class="mb-3">
+      <label for="titleUpdate" class="form-label">Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titleUpdate"
+        placeholder="Title"
+        value="{{title}}"/>
+    </div>
+    <div class="mb-3">
+      <label for="contentUpdate" class="form-label">Content:</label>
+      <textarea class="form-control" id="contentUpdate" rows="4" placeholder="Content goes here.">{{content}}</textarea>
+    </div>
+
+    <button type="submit" id="postUpdate" class="btn btn-success">Update</button>
+    <button type="button" id="postDelete" class="btn btn-danger">Delete</button>
+  </form>
+</div> 
