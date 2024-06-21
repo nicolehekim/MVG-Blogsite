@@ -1,14 +1,17 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<div class="container">
+    <h2 class="d-flex justify content-center">Create a New Post</h2>
+    <form class="newPostForm">
+        <div class="mb-3">
+            <label for="newTitle" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="newTitle" placeholder="Title Goes Here"/>
+        </div>
+
+        <div class="mb-3">
+            <label for="newContent" class="form-label">Text:</label>
+            <textarea class="form-control" id="newContent" rows="4" placeholder="Content Goes Here"></textarea>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Publish</button>
+        </div>
+    </form>
 </div>

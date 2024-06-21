@@ -18,12 +18,16 @@
       <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home</a>
-      <a class="nav-item nav-link" href="/dashboard">Dashboard</a>
-      <a class="nav-item nav-link text-right" href="/login">Login</a>
-      <a class="nav-item nav-link text-right" href="/login">Sign Up</a>
-    </div>
+      <ul class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Home</a>
+        <a class="nav-item nav-link" href="/dashboard">Dashboard</a>
+        {{#if logged_in}}
+        <a class="nav-item nav-link" id='logout' href="/logout">Logout</a>
+        {{else}}
+        <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="nav-item nav-link" href="/login">Sign Up</a>
+        {{/if}}
+      </div>
     </div>
     </nav>
   </header>

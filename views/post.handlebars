@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2>Post:</h2>
+    <article class="card m-4 p-3">
+        <h2>{{title}}</h2>
+        <br>
+        <p>By: {{user.email}}</p>
+        <p>{{content}}</p>
+    </article>
+    <br>
+    {{#if logged_in}}
+        <form class="formCommentNew mb-3">
+        <div class="mb-3">
+            <label for="comment" class="form-label">New Comment:</label>
+            <textarea class="form-control" id="commentNew" rows="2" placeholder="Coment Goes Here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    {{/if}}
+    
+    <h4>Comments:</h4>
+    {{#each comments}}
+    <div class="comment card mb-3 p-2">
+        <p>{{commentText}}</p>
+        <p>By: {{user.email}}</p>
+    </div>
+    {{/each}}
+</div>
