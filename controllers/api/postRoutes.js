@@ -4,26 +4,27 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const postData = await Post.findall ({
-      include: [{model: User, attributes: ['name']}],
+    const postData = await Post.findAll({
+      include: [{model: User, attributes: ['email']}],
     });
 
     res.status(200).json(postData);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
 router.get('/:id', async (req, res) => {
   try {
-    const postData = await Post.findbyPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [{
         model: User,
-        attributes: ['name']
+        attributes: ['email']
       },
       {
         model: Comment,
-        include: [{ model: User, attributes: ['name']}],
+        include: [{ model: User, attributes: ['email']}],
       }],
     });
 
@@ -46,6 +47,7 @@ router.post('/', withAuth, async (req, res) => {
     });
     res.status(200).json(postNew);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
